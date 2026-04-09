@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Recruiter Dashboard</h2>
+<div class="card">
+<form method="POST" action="/add_job">
+<input name="title" placeholder="Job Title">
+<input name="description" placeholder="Description">
+<button>Add Job</button>
+</form>
+</div>
+{% for job in jobs %}
+<div class="card">
+<h3>{{job.title}}</h3>
+<p>{{job.description}}</p>
+<a href="/applications/{{job.id}}"><button>View Applicants</button></a>
+</div>
+{% endfor %}
+{% endblock %}
