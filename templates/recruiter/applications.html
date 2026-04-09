@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Applications</h2>
+{% for a in apps %}
+<div class="card">
+<p>ID: {{a.id}}</p>
+<p>Status: {{a.status}}</p>
+<a href="/static/uploads/{{a.resume}}" target="_blank"><button>View Resume</button></a>
+<form method="POST" action="/update_status/{{a.id}}">
+<select name="status">
+<option>Shortlisted</option>
+<option>Rejected</option>
+</select>
+<button>Update</button>
+</form>
+</div>
+{% endfor %}
+{% endblock %}
