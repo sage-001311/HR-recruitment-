@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>My Applications</h2>
+{% for a in apps %}
+<div class="card">
+<p>Job ID: {{a.job_id}}</p>
+<p>Status: {{a.status}}</p>
+</div>
+{% endfor %}
+{% endblock %}
